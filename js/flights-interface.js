@@ -14,4 +14,8 @@ $(document).ready(function(){
     var passengers = $('#passengers').val();
     Flights.checkPrice(origin, destination, date, passengers, displayPrice);
   });
+
+  $('#reset').click(function(){
+    location.reload();
+  });
 });
