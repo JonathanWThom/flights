@@ -2,7 +2,7 @@ var apiKey = require('./../.env').apiKey;
 
 function Flights() {}
 
-Flights.checkPrice = function(origin, destination, date, price) {
+Flights.checkPrice = function(origin, destination, date, passengers, displayPrice) {
   var request = {
    "request": {
     "slice": [
@@ -13,7 +13,7 @@ Flights.checkPrice = function(origin, destination, date, price) {
      }
     ],
     "passengers": {
-     "adultCount": 1
+     "adultCount": passengers
     }
    }
  };
@@ -26,7 +26,18 @@ Flights.checkPrice = function(origin, destination, date, price) {
      success: function (data) {
       // trips.tripOption[0].saleTotal;
       //Once we get the result you can either send it to console or use it anywhere you like.
-      console.log(JSON.stringify(data.trips.tripOption[0].saleTotal));
+      data.trips.tripOption.forEach(function(tripOption) {
+        console.log(JSON.stringify(tripOption.saleTotal));
+
+        // for 1-10
+      });
+
+      // console.log(JSON.stringify(data.trips.tripOption[0].saleTotal));
+      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].flight.number));
+      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].flight.carrier));
+      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].leg[0].departureTime));
+      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].leg[0].duration));
+      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].cabin));
     },
       error: function(){
        //Error Handling for our request
