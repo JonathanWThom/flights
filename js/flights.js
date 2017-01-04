@@ -24,15 +24,25 @@ Flights.checkPrice = function(origin, destination, date, passengers, displayPric
     dataType: 'json',
     data: JSON.stringify(request),
     success: function (data) {
+      var flightNumbers = [];
       for (i = 0; i < 20; i++) {
-        var price = JSON.stringify(data.trips.tripOption[i].saleTotal)
-        console.log(JSON.stringify(data.trips.tripOption[i].saleTotal));
-        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].flight.number));
-        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].flight.carrier));
-        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].leg[0].departureTime));
-        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].leg[0].duration));
-        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].cabin));
-        displayPrice(price);
+        console.log('loop!');
+        if (data.trips.tripOption.length === i) {
+          break;
+        }
+        var price = JSON.stringify(data.trips.tripOption[i].saleTotal);
+        var flightNumber = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].flight.number);
+        var airline = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].flight.carrier);
+        var departure = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].leg[0].departureTime);
+        var duration = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].leg[0].duration);
+        var cabin = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].cabin);
+
+        if (flightNumbers.includes(flightNumber)) {
+          //do nothing
+        } else {
+          displayPrice(price, flightNumber, airline, departure, duration, cabin);
+        }
+        flightNumbers.push(flightNumber);
       }
     },
     error: function(){

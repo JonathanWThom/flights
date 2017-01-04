@@ -22,5 +22,8 @@
     "gulp-util": "^3.0.8",
     "jshint": "^2.9.4",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "unless": "^0.1.1"
   }
 }

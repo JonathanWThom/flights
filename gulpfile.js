@@ -5,6 +5,7 @@ var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
 var utilities = require('gulp-util');
 var del = require('del');
+var unless = require('unless');
 var jshint = require('gulp-jshint');
 var lib = require('bower-files')({
   "overrides":{
