@@ -18,32 +18,27 @@ Flights.checkPrice = function(origin, destination, date, passengers, displayPric
    }
  };
   $.ajax({
-     type: "POST",
-     url: "https://www.googleapis.com/qpxExpress/v1/trips/search?key=" + apiKey,
-     contentType: 'application/json',
-     dataType: 'json',
-     data: JSON.stringify(request),
-     success: function (data) {
-      // trips.tripOption[0].saleTotal;
-      //Once we get the result you can either send it to console or use it anywhere you like.
-      data.trips.tripOption.forEach(function(tripOption) {
-        console.log(JSON.stringify(tripOption.saleTotal));
-
-        // for 1-10
-      });
-
-      // console.log(JSON.stringify(data.trips.tripOption[0].saleTotal));
-      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].flight.number));
-      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].flight.carrier));
-      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].leg[0].departureTime));
-      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].leg[0].duration));
-      // console.log(JSON.stringify(data.trips.tripOption[0].slice[0].segment[0].cabin));
+    type: "POST",
+    url: "https://www.googleapis.com/qpxExpress/v1/trips/search?key=" + apiKey,
+    contentType: 'application/json',
+    dataType: 'json',
+    data: JSON.stringify(request),
+    success: function (data) {
+      for (i = 0; i < 20; i++) {
+        var price = JSON.stringify(data.trips.tripOption[i].saleTotal)
+        console.log(JSON.stringify(data.trips.tripOption[i].saleTotal));
+        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].flight.number));
+        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].flight.carrier));
+        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].leg[0].departureTime));
+        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].leg[0].duration));
+        console.log(JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].cabin));
+        displayPrice(price);
+      }
     },
-      error: function(){
-       //Error Handling for our request
-       alert("Access to Google QPX Failed.");
-     }
-    });
+    error: function(){
+      alert("Access to Google QPX Failed.");
+    }
+  });
 };
 
 exports.flightsModule = Flights;

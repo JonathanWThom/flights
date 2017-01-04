@@ -1,7 +1,7 @@
 var Flights = require('./../js/flights.js').flightsModule;
 
 function displayPrice(price) {
-  $('#showFlights').text(price);
+  $('#showFlights tbody').append('<tr><td>' + price + '</td></tr>');
   // this will change to show more parameters
 }
 
