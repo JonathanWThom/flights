@@ -34,7 +34,9 @@ Flights.checkPrice = function(origin, destination, date, passengers, displayPric
         var flightNumber = data.trips.tripOption[i].slice[0].segment[0].flight.number;
         var airline = data.trips.tripOption[i].slice[0].segment[0].flight.carrier;
         var departure = data.trips.tripOption[i].slice[0].segment[0].leg[0].departureTime;
-        var duration = data.trips.tripOption[i].slice[0].segment[0].leg[0].duration;
+        // var duration = data.trips.tripOption[i].slice[0].segment[0].leg[0].duration;
+        var duration = data.trips.tripOption[i].slice[0].duration;
+
         var cabin = data.trips.tripOption[i].slice[0].segment[0].cabin;
 
         if (flightNumbers.includes(flightNumber)) {
