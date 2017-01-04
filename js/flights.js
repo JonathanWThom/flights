@@ -24,8 +24,9 @@ Flights.checkPrice = function(origin, destination, date, price) {
      dataType: 'json',
      data: JSON.stringify(request),
      success: function (data) {
+      // trips.tripOption[0].saleTotal;
       //Once we get the result you can either send it to console or use it anywhere you like.
-      console.log(JSON.stringify(data));
+      console.log(JSON.stringify(data.trips.tripOption[0].saleTotal));
     },
       error: function(){
        //Error Handling for our request
