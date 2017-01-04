@@ -9,17 +9,24 @@
   </head>
   <body>
     <div class="container">
-      <h1>Check prices for Flights!</h1>
-      <label for="origin">Enter Departure Location:</label>
-      <input id="origin" type="text">
-      <label for="destination">Enter Destination:</label>
-      <input id="destination" type="text">
-      <label for="passengers">Enter # of Passengers:</label>
-      <input id="passengers" type="number">
-      <label for="date">Enter date of flight:</label>
-      <input id="date" type="text" placeholder="YYYY-MM-DD">
+      <h1>Check for Flight prices!</h1>
+      <div class="input-field">
+        <input id="origin" type="text" class="validate" placeholder="">
+        <label for="origin">Enter Departure Location:</label>
+      </div>
+      <div class="input-field">
+        <input id="destination" type="text" class="validate" placeholder="">
+        <label for="destination">Enter Destination:</label>
+      </div>
+      <div class="input-field">
+        <input id="passengers" type="number" class="validate" placeholder="">          <label for="passengers">Enter # of Passengers:</label>
+      </div>
+      <div class="input-field">
+        <input id="date" type="text" placeholder="YYYY-MM-DD" class="validate">
+        <label for="date">Enter date of flight:</label>
+      </div>
       <button class="btn" id="getFlights">SHOW FLIGHTS</button>
-      <button class="btn" id="reset">Reset</button>
+      <button class="btn" id="reset">RESET</button>
       <table class="table table-hover" id="showFlights">
         <thead>
           <tr>
