@@ -15,6 +15,13 @@ var lib = require('bower-files')({
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
       ]
+    },
+    "materialize" : {
+      "main": [
+        "fonts/roboto/",
+        "dist/css/materialize.css",
+        "dist/js/materialize.js"
+      ]
     }
   }
 });

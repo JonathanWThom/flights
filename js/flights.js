@@ -30,12 +30,12 @@ Flights.checkPrice = function(origin, destination, date, passengers, displayPric
         if (data.trips.tripOption.length === i) {
           break;
         }
-        var price = JSON.stringify(data.trips.tripOption[i].saleTotal);
-        var flightNumber = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].flight.number);
-        var airline = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].flight.carrier);
-        var departure = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].leg[0].departureTime);
-        var duration = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].leg[0].duration);
-        var cabin = JSON.stringify(data.trips.tripOption[i].slice[0].segment[0].cabin);
+        var price = data.trips.tripOption[i].saleTotal;
+        var flightNumber = data.trips.tripOption[i].slice[0].segment[0].flight.number;
+        var airline = data.trips.tripOption[i].slice[0].segment[0].flight.carrier;
+        var departure = data.trips.tripOption[i].slice[0].segment[0].leg[0].departureTime;
+        var duration = data.trips.tripOption[i].slice[0].segment[0].leg[0].duration;
+        var cabin = data.trips.tripOption[i].slice[0].segment[0].cabin;
 
         if (flightNumbers.includes(flightNumber)) {
           //do nothing
