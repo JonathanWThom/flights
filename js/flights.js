@@ -2,6 +2,26 @@ var apiKey = require('./../.env').apiKey;
 
 function Flights() {}
 
+function airlineLink(airline) {
+  var link;
+  if (airline === "AS") {
+    link = "<a href='https://www.alaskaair.com'>Alaska Airlines</a>";
+  } else if (airline === "AA") {
+    link = "<a href='https://www.aa.com'>American Airlines</a>";
+  } else if (airline === "UA") {
+    link = "<a href='https://www.united.com'>United Airlines</a>";
+  } else if (airline === "WN") {
+    link = "<a href='https://www.southwest.com'>Southwest Airlines</a>";
+  } else if (airline === "DL") {
+    link = "<a href='https://www.delta.com'>Delta Airlines</a>";
+  } else if (airline === "AC") {
+    link = "<a href='https://www.aircanada.com'>Air Canada</a>";
+  } else {
+    link = airline;
+  }
+  return link;
+}
+
 Flights.checkPrice = function(origin, destination, date, passengers, displayPrice) {
   var request = {
    "request": {
@@ -33,6 +53,7 @@ Flights.checkPrice = function(origin, destination, date, passengers, displayPric
         var price = usdPrice.replace('USD', '$');
         var flightNumber = data.trips.tripOption[i].slice[0].segment[0].flight.number;
         var airline = data.trips.tripOption[i].slice[0].segment[0].flight.carrier;
+        var link = airlineLink(airline);
         var departure = data.trips.tripOption[i].slice[0].segment[0].leg[0].departureTime;
         var departureArray = departure.split("");
         departureArray.pop();
@@ -48,7 +69,7 @@ Flights.checkPrice = function(origin, destination, date, passengers, displayPric
         if (flightNumbers.includes(flightNumber)) {
           //do nothing
         } else {
-          displayPrice(price, flightNumber, airline, departure, duration, cabin);
+          displayPrice(price, flightNumber, link, departure, duration, cabin);
         }
         flightNumbers.push(flightNumber);
       }

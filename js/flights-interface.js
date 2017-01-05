@@ -1,8 +1,8 @@
 var Flights = require('./../js/flights.js').flightsModule;
 
-function displayPrice(price, flightNumber, airline, departure, duration, cabin) {
+function displayPrice(price, flightNumber, link, departure, duration, cabin) {
   $('#showFlights').show();
-  $('#showFlights tbody').append('<tr><td>' + price + '</td><td>' + flightNumber + '</td><td>' + airline + '</td><td>' + departure + '</td><td>' + duration + '</td><td>' + cabin + '</td></tr>');
+  $('#showFlights tbody').append('<tr><td>' + price + '</td><td>' + flightNumber + '</td><td>' + link + '</td><td>' + departure + '</td><td>' + duration + '</td><td>' + cabin + '</td></tr>');
 
 }
 
