@@ -19,7 +19,7 @@
           <h4>Check for flight prices</h4>
           <div class="input-field">
             <input id="origin" type="text" class="validate" placeholder="">
-            <label for="origin">Enter Departure Location:</label>
+            <label for="origin">Enter Departure Airport Code:</label>
           </div>
           <div class="input-field">
             <!-- <input id="destination" type="text" class="validate" placeholder=""> -->
@@ -45,10 +45,12 @@
           <button class="btn" id="getFlights">SHOW FLIGHTS</button>
           <button class="btn" id="reset">RESET</button>
           <div id="error"></div>
+          <div id="showImage"></div>
         </div>
         <div class="col l1"></div>
         <div class="col l6 flight-list">
-          <table class="table table-hover" id="showFlights">
+          <div id="showFlights">
+          <table class="table table-hover">
             <thead>
               <tr>
                 <th>Price</th>
@@ -60,28 +62,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>$100</td>
-                <td>101</td>
-                <td>UA</td>
-                <td>string of GMT stuff</td>
-                <td>55</td>
-                <td>Coach</td>
-              </tr>
-              <tr>
-                <td>$150</td>
-                <td>1010</td>
-                <td>UA</td>
-                <td>string of GMT stuff</td>
-                <td>55</td>
-                <td>Coach</td>
-              </tr>
             </tbody>
           </table>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div id="showImage"></div>
       </div>
     </div>
   </body>

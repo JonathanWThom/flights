@@ -4,7 +4,7 @@
   margin: 0;
 }
 #showFlights {
-  // display: none;
+  display: none;
 }
 
 $dark-purple: #4a148c;
@@ -44,4 +44,12 @@ nav {
       background-color: $btn-background;
     }
   }
+}
+
+.flight-list {
+  display: none;
+}
+
+#showImage {
+  width: 100%;
 }
