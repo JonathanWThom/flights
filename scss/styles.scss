@@ -16,6 +16,10 @@ body {
   background-image: url("../../img/joshua.jpg");
 }
 
+.caret {
+  display: none;
+}
+
 h4, th {
   color: $dark-purple;
 }
@@ -33,6 +37,7 @@ nav {
   .flight-list, .flight-form {
     background-color: $background-form;
     padding: 15px;
+    margin-top: 20px;
     .btn {
       margin-bottom: 10px;
       margin-right: 15px;

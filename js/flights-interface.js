@@ -7,6 +7,7 @@ function displayPrice(price, flightNumber, airline, departure, duration, cabin) 
 }
 
 $(document).ready(function(){
+  $('select').material_select();
   $('#getFlights').click(function(){
     var origin = $('#origin').val();
     var destination = $('#destination').val();

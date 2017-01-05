@@ -10,7 +10,7 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <span class='brand-logo'>Trip Planner</span>
+        <span class='brand-logo'>Climbing Trip Planner</span>
       </div>
     </nav>
     <div class="container">
@@ -22,8 +22,17 @@
             <label for="origin">Enter Departure Location:</label>
           </div>
           <div class="input-field">
-            <input id="destination" type="text" class="validate" placeholder="">
-            <label for="destination">Enter Destination:</label>
+            <!-- <input id="destination" type="text" class="validate" placeholder=""> -->
+            <select id="destination">
+              <option value="" disabled selected>Choose Destination</option>
+              <option value="PSP">Joshua Tree (Palm Springs)</option>
+              <option value="SMF">Yosemite (Sacramento)</option>
+              <option value="YVR">Squamish (Vancouver, CAN)</option>
+              <option value="LAS">Red Rocks (Las Vegas)</option>
+              <option value="MTY">El Potrero Chico (Monterrey, MEX)</option>
+            </select>
+            <label>Destination Airports:</label>
+            <!-- <label for="destination">Enter Destination:</label> -->
           </div>
           <div class="input-field">
             <input id="passengers" type="number" class="validate" placeholder="">
