@@ -7,8 +7,14 @@
   // display: none;
 }
 
-$borders: 3px solid black;
 $dark-purple: #4a148c;
+$background-form: #E8E2F1;
+$btn-background: #148C86;
+// $app-background:
+
+body {
+  background-image: url("../../img/joshua.jpg");
+}
 
 h4, th {
   color: $dark-purple;
@@ -23,15 +29,14 @@ nav {
   }
 }
 
-
 .row {
   .flight-list, .flight-form {
-    background-color: #bbdefb;
+    background-color: $background-form;
     padding: 15px;
     .btn {
       margin-bottom: 10px;
       margin-right: 15px;
-      background-color: #ef5350;
+      background-color: $btn-background;
     }
   }
 }
