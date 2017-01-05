@@ -1,8 +1,8 @@
 var Image = require('./../js/image.js').imageModule;
 
 function displayImage(farmId, serverId, photoId, secret) {
-  var link = "https://farm" + farmId + ".staticflickr.com/" + serverId + "/" + photoId + "_" + secret + "_m.jpg";
-  $('#showImage').html("<img src='" + link + "'>");
+  var link = "https://farm" + farmId + ".staticflickr.com/" + serverId + "/" + photoId + "_" + secret + "_n.jpg";
+  $('#showImage').html("<img id='photo-size' src='" + link + "'>");
 }
 
 $(document).ready(function(){
