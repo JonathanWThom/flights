@@ -1,3 +1,37 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 #showFlights {
-  display: none;
+  // display: none;
+}
+
+$borders: 3px solid black;
+$dark-purple: #4a148c;
+
+h4, th {
+  color: $dark-purple;
+}
+
+nav {
+  .nav-wrapper {
+    background-color: $dark-purple;
+    .brand-logo {
+      margin-left: 25px;
+    }
+  }
+}
+
+
+.row {
+  .flight-list, .flight-form {
+    background-color: #bbdefb;
+    padding: 15px;
+    .btn {
+      margin-bottom: 10px;
+      margin-right: 15px;
+      background-color: #ef5350;
+    }
+  }
 }

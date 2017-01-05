@@ -8,40 +8,69 @@
     <title>Flight Checker</title>
   </head>
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <span class='brand-logo'>Trip Planner</span>
+      </div>
+    </nav>
     <div class="container">
-      <h1>Check for Flight prices!</h1>
-      <div class="input-field">
-        <input id="origin" type="text" class="validate" placeholder="">
-        <label for="origin">Enter Departure Location:</label>
+      <div class="row">
+        <div class="col l5 flight-form">
+          <h4>Check for flight prices</h4>
+          <div class="input-field">
+            <input id="origin" type="text" class="validate" placeholder="">
+            <label for="origin">Enter Departure Location:</label>
+          </div>
+          <div class="input-field">
+            <input id="destination" type="text" class="validate" placeholder="">
+            <label for="destination">Enter Destination:</label>
+          </div>
+          <div class="input-field">
+            <input id="passengers" type="number" class="validate" placeholder="">          <label for="passengers">Enter # of Passengers:</label>
+          </div>
+          <div class="input-field">
+            <input id="date" type="text" placeholder="YYYY-MM-DD" class="validate">
+            <label for="date">Enter date of flight:</label>
+          </div>
+          <button class="btn" id="getFlights">SHOW FLIGHTS</button>
+          <button class="btn" id="reset">RESET</button>
+        </div>
+        <div class="col l1"></div>
+        <div class="col l6 flight-list">
+          <table class="table table-hover" id="showFlights">
+            <thead>
+              <tr>
+                <th>Price</th>
+                <th>Flight #</th>
+                <th>Airline</th>
+                <th>Departure Time</th>
+                <th>Duration (minutes)</th>
+                <th>Cabin Class</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$100</td>
+                <td>101</td>
+                <td>UA</td>
+                <td>string of GMT stuff</td>
+                <td>55</td>
+                <td>Coach</td>
+              </tr>
+              <tr>
+                <td>$150</td>
+                <td>1010</td>
+                <td>UA</td>
+                <td>string of GMT stuff</td>
+                <td>55</td>
+                <td>Coach</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="input-field">
-        <input id="destination" type="text" class="validate" placeholder="">
-        <label for="destination">Enter Destination:</label>
-      </div>
-      <div class="input-field">
-        <input id="passengers" type="number" class="validate" placeholder="">          <label for="passengers">Enter # of Passengers:</label>
-      </div>
-      <div class="input-field">
-        <input id="date" type="text" placeholder="YYYY-MM-DD" class="validate">
-        <label for="date">Enter date of flight:</label>
-      </div>
-      <button class="btn" id="getFlights">SHOW FLIGHTS</button>
-      <button class="btn" id="reset">RESET</button>
-      <table class="table table-hover" id="showFlights">
-        <thead>
-          <tr>
-            <th>Price</th>
-            <th>Flight #</th>
-            <th>Airline</th>
-            <th>Departure Time</th>
-            <th>Duration (minutes)</th>
-            <th>Cabin Class</th>
-          </tr>
-        </thead>
-        <tbody>
 
-        </tbody>
-      </table>
+
     </div>
   </body>
 </html>
