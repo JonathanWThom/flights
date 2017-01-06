@@ -22,7 +22,7 @@ npm install
 bower install
 touch .env
 ```
-* _Create API Keys_
+### _Create API Keys_
 For QPX Express Airfare API:
 * https://console.developers.google.com/
 * sign in
@@ -31,9 +31,10 @@ For QPX Express Airfare API:
 * click Enable
 * click Credentials, view API Key
 * copy API Key into .env file with this formatting: exports.apiKey = {"YOUR-KEY-HERE"};
+
 For Flickr API:
 * sign in at https://www.flickr.com
-* navigate to https://www.flickr.com/services/apps/create/noncommercial/?
+* navigate to https://www.flickr.com/services/apps/create/noncommercial/
 * fill information and Submit
 * find API Key at App Garden > Apps by You
 * copy API Key into .env file with this formatting: exports.flickrKey = {"YOUR-KEY-HERE"};
