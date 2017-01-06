@@ -16,6 +16,10 @@ function airlineLink(airline) {
     link = "<a href='https://www.delta.com'>Delta Airlines</a>";
   } else if (airline === "AC") {
     link = "<a href='https://www.aircanada.com'>Air Canada</a>";
+  } else if (airline === "VX") {
+    link = "<a href='https://www.virginamerica.com'>Virgin America</a>";
+  } else if (airline === "AM") {
+    link = "<a href='https://www.aeromexico.com'>Air Mexico</a>";
   } else {
     link = airline;
   }
